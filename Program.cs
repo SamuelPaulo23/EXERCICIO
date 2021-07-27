@@ -282,13 +282,79 @@ namespace EXERCICIO
 
             void ExercicioDeFuncoes2()
             {
-              static int recursiva(int x)
+                int recursiva(int x)
                 {
                     return ((x <= 1) ? 1 : (x * recursiva(x - 1)));
                 }
+                int laco(int x)
+                {
+                    int fat = x;
+                    for (int cont = x; cont >= 2; cont--)
+                    {
+                        fat *= cont - 1;
+                    }
+                    return fat;
+                }
                 Console.WriteLine("Digite um valor: ");
                 int fatorial = int.Parse(Console.ReadLine());
-                Console.WriteLine($"Resultado {recursiva(fatorial)}");
+                Console.WriteLine($"Resultado {laco(fatorial)}");
+                escolha();
+            }
+
+            void ExerciciodeFuncoes3()
+            {
+                Console.WriteLine("Digite o valor da sua compra em nossa loja: ");
+                double compra = double.Parse(Console.ReadLine());
+                Console.WriteLine("--------------------------------");
+                Console.WriteLine(" ESCOLHA A OPÇÃO DE PAGAMENTO   ");
+                Console.WriteLine("--------------------------------");
+
+                Console.WriteLine(" selecione [1] para pagamento a vista");
+                Console.WriteLine(" selecione [2] para pagamento no cartão");
+                var pagamento = int.Parse(Console.ReadLine());
+                switch (pagamento)
+                {
+                    case 1:
+                        Console.WriteLine("Compras a vista levam 10% de desconto");
+                        double total = compra - (compra / 10);
+                        Console.WriteLine($"O valor final da sua compra é igual a {total:C}");
+                        break;
+                    case 2:
+                        Console.WriteLine("selecione [1] para parcelar em 2 vezez");
+                        Console.WriteLine("selecione [2] para parcelar em 3 vezez");
+                        var parcelas = int.Parse(Console.ReadLine());
+                        switch (parcelas)
+                        {
+                            case 1:
+                                Console.WriteLine($" O valor será igual o valor do Preço da etiqueta");
+                                double parcela2x = compra / 2;
+                                Console.WriteLine($"O valor da parcela será igual a 2 parcelas de {parcela2x:C} ");
+                                break;
+                            case 2:
+                                Console.WriteLine("Compras em 3 vezes acima de R$100,00 levam 3% de juros ao mês");
+                                if (compra > 100)
+                                {
+                                    double parcela3x = compra / 3;
+                                    double total_juros = (parcela3x / 100) * 3;
+                                    double valor_final = parcela3x + total_juros;
+                                    Console.WriteLine($"O valor da sua parcela será 3x de {valor_final:C} ");
+                                }
+                                else
+                                {
+                                    double parcelax = compra / 3;
+                                    Console.WriteLine($"O valor da sua parcela será 3x de {parcelax:C}");
+                                }
+                                break;
+                                
+                                   
+                                   
+                                
+                        }
+
+
+                        break;
+                }
+
                 escolha();
             }
 
@@ -311,6 +377,7 @@ namespace EXERCICIO
                     Console.WriteLine("13-exercicio extra-for 13\n");
                     Console.WriteLine("14-exercicio de funções 1\n"); 
                     Console.WriteLine("15-exercicio de funções 2\n");
+                    Console.WriteLine("16-exercicio de funções 3\n");
                     Console.WriteLine("digite o numero do exercicio:\n ");
 
                     var opcao = Convert.ToInt32(Console.ReadLine());
@@ -403,6 +470,12 @@ namespace EXERCICIO
                             break;
                         case 15:
                             ExercicioDeFuncoes2();
+                            Console.ReadLine();
+                            Console.Clear();
+                            menu();
+                            break;
+                        case 16:
+                            ExerciciodeFuncoes3();
                             Console.ReadLine();
                             Console.Clear();
                             menu();
