@@ -345,19 +345,103 @@ namespace EXERCICIO
                                     Console.WriteLine($"O valor da sua parcela será 3x de {parcelax:C}");
                                 }
                                 break;
-                                
-                                   
-                                   
-                                
                         }
-
-
                         break;
                 }
-
                 escolha();
             }
 
+            void ExercicioString()
+            {
+                Console.WriteLine("Digite uma qualquer palavra de no máximo 80 caracteres:  ");
+                string palavra = Console.ReadLine();
+                int tamanho = palavra.Length;
+                if (tamanho <= 80) 
+                {
+                    char[] letra = palavra.ToCharArray();
+                    int pontuacao = 0;
+                    int numeros = 0;
+                    int minuscula = 0;
+                    for (int i = 0; i < letra.Length; i++)
+                    {
+                        if (Char.IsPunctuation(letra[i]))
+                        {
+                            pontuacao = pontuacao + 1;
+                        }
+
+                        if (Char.IsNumber(letra[i]))
+                        {
+                            numeros++;
+                        }
+
+                        if (Char.IsLower(letra[i]))
+                        {
+                            minuscula++;
+                        }
+                    }
+                     Console.WriteLine($"A seu texto Possui {tamanho} caracteres , {pontuacao} sinais de pontuação, {minuscula} letras minusculas e {numeros} numeros");
+                }
+                else
+                {
+                    Console.WriteLine("A sua frase passou de 80 caracteres!");
+                }      
+            }
+
+            void ExercicioString2()
+            {
+                Console.WriteLine("Digite uma frase: ");
+                string frase = Console.ReadLine();
+                string[] palavras = frase.Split(' ');
+                for (int i = 0; i < palavras.Length; i++)
+                {
+                    Console.WriteLine(palavras[i]);
+                }
+                escolha();
+            }
+
+            void ExercicioString3()
+            {
+                Console.WriteLine("Digite O seu Nome:  ");
+                string nome = Console.ReadLine();
+                Console.WriteLine("Digite o seu endereço: ");
+                string endereco = Console.ReadLine();
+                Console.WriteLine("Digite o sua idade: ");
+                string idade = Console.ReadLine();
+                Console.WriteLine("digite o seu numero de telefone: ");
+                string telefone = Console.ReadLine();
+                Console.WriteLine($"Seu nome é {nome}, você tem {idade} anos, mora na rua {endereco}, seu número de telefone é {telefone}\n");
+                escolha();
+            }
+
+            void ExercicioString4()
+            {
+                Console.WriteLine("Digite 'sim' ou 'nao': ");
+                var SN = Console.ReadLine();
+                string sim = "sim";
+                string nao = "nao";
+                if (SN == sim)
+                {
+                    Console.WriteLine("1\n");
+                }
+                else
+                {
+                    if (SN == nao) 
+                    {
+                        Console.WriteLine("0\n");
+                    }
+                }
+                if ((SN != sim) & (SN != nao))
+                {
+                    Console.WriteLine("Digite Conforme o ordenado\n");
+                }
+                escolha();
+            }
+
+
+
+
+
+                
             void menu()
                 {
                     Console.Clear();
@@ -378,6 +462,10 @@ namespace EXERCICIO
                     Console.WriteLine("14-exercicio de funções 1\n"); 
                     Console.WriteLine("15-exercicio de funções 2\n");
                     Console.WriteLine("16-exercicio de funções 3\n");
+                    Console.WriteLine("17-exercicio strings 1\n"); 
+                    Console.WriteLine("18-exercicio strings 2\n");
+                    Console.WriteLine("19-exercicio strings 3\n");
+                    Console.WriteLine("20-exercicio strings 4\n");
                     Console.WriteLine("digite o numero do exercicio:\n ");
 
                     var opcao = Convert.ToInt32(Console.ReadLine());
@@ -476,6 +564,30 @@ namespace EXERCICIO
                             break;
                         case 16:
                             ExerciciodeFuncoes3();
+                            Console.ReadLine();
+                            Console.Clear();
+                            menu();
+                            break; 
+                        case 17:
+                            ExercicioString();
+                            Console.ReadLine();
+                            Console.Clear();
+                            menu();
+                            break; 
+                        case 18:
+                            ExercicioString2();
+                            Console.ReadLine();
+                            Console.Clear();
+                            menu();
+                            break; 
+                        case 19:
+                            ExercicioString3();
+                            Console.ReadLine();
+                            Console.Clear();
+                            menu();
+                            break;
+                        case 20:
+                            ExercicioString4();
                             Console.ReadLine();
                             Console.Clear();
                             menu();
