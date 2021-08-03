@@ -437,11 +437,39 @@ namespace EXERCICIO
                 escolha();
             }
 
+            void ExercicioString5()
+            {
+                Console.WriteLine("Digite uma frase: ");
+                string palavra = Console.ReadLine();
+                string[] frase = palavra.Split(' ');
+                int numero = frase.Length;
+                Console.WriteLine($"A sua palavra frase possui {numero} palavras divididas por espaços em brancos");
+                escolha();
+            }
+
+            void ExercicioString6()
+            {
+                Console.WriteLine("Digite um valor para a Variável 'a': ");
+                double A = double.Parse(Console.ReadLine());
+                Console.WriteLine("Digite um valor para a Variável 'b': ");
+                double B = double.Parse(Console.ReadLine());
+                Console.WriteLine("Digite um valor para a Variável 'c': ");
+                double C= double.Parse(Console.ReadLine());
+                Console.WriteLine("Digite um valor para a Variável 'd': ");
+                double D= double.Parse(Console.ReadLine());
+                Console.WriteLine("Digite um valor para a Variável 'e': ");
+                double E= double.Parse(Console.ReadLine());
+                Console.WriteLine("Digite um valor para a Variável 'n': ");
+                double N = double.Parse(Console.ReadLine());
+                Console.WriteLine("Fórmula 1 (A+B)*C");
+                double total = (A + B) * C;
+                Console.WriteLine($"Total da Fórmula 1 = {total}");
+                Console.WriteLine("Fórmula 2 TOTAL/N");
 
 
 
+            }
 
-                
             void menu()
                 {
                     Console.Clear();
@@ -466,6 +494,7 @@ namespace EXERCICIO
                     Console.WriteLine("18-exercicio strings 2\n");
                     Console.WriteLine("19-exercicio strings 3\n");
                     Console.WriteLine("20-exercicio strings 4\n");
+                    Console.WriteLine("21-exercicio strings 5\n");
                     Console.WriteLine("digite o numero do exercicio:\n ");
 
                     var opcao = Convert.ToInt32(Console.ReadLine());
@@ -588,6 +617,12 @@ namespace EXERCICIO
                             break;
                         case 20:
                             ExercicioString4();
+                            Console.ReadLine();
+                            Console.Clear();
+                            menu();
+                            break;
+                        case 21:
+                            ExercicioString5();
                             Console.ReadLine();
                             Console.Clear();
                             menu();
