@@ -463,11 +463,63 @@ namespace EXERCICIO
                 double N = double.Parse(Console.ReadLine());
                 Console.WriteLine("Fórmula 1 (A+B)*C");
                 double total = (A + B) * C;
-                Console.WriteLine($"Total da Fórmula 1 = {total}");
+                Console.WriteLine($"Total da Fórmula 1 = {total}\n");
                 Console.WriteLine("Fórmula 2 TOTAL/N");
+                double total2 = total / N;
+                Console.WriteLine($"Total da Fórmula 2 = {total2}\n");
+                Console.WriteLine("Fórmula 3 A-B(C + D2)/E");
+                double total3 = A - B*(C + (D*2)) / E;
+                Console.WriteLine($"Total da Fórmula 3 = {total3}\n");
+                Console.WriteLine("Fórmula 4 A ^ B");
+                double total4 = Math.Pow(A, B);
+                Console.WriteLine($"Total da Fórmula 4 = {total4}\n");
+                Console.WriteLine("Fórmula 5 A * (B - C)");
+                double total5 = A * (B * C);
+                Console.WriteLine($"Total da Fórmula 5 = { total5}\n");
+                escolha();
+            }
 
+            void ExercicioString7()
+            {
+                Console.WriteLine("------------------------------------");
+                Console.WriteLine("        VERDADEIRO OU FALSO         ");
+                Console.WriteLine("------------------------------------\n");
+                Console.WriteLine("6<=7?");
+                if (6 <= 7)
+                {
+                    Console.WriteLine("VERDADEIRO");
+                }
+                else
+                {
+                    Console.WriteLine("FALSO\n");
+                }
+                Console.WriteLine("(64) ^ (1/2) > (5)*2 ");
+                //bool meio = Math.Pow(64, 1/2) > 5*2;
+                if (Math.Pow(64,1/2 ) > 5*2)
+                {
+                    Console.WriteLine("VERDADEIRO");
+                }
+                else
+                {
+                    Console.WriteLine("FALSO");
+                }
+                Console.WriteLine("'Pseudocódigo' < 'PSEUDOCÓDIGO'");
+                string palavra1 = "Pseudocódigo";
+                string palavra2 = "PSEUDOCÓDIGO";
+                int valor_palavra1 = palavra1.Length;
+                int valor_palavra2 = palavra2.Length;
+                if (valor_palavra1< valor_palavra2)
+                {
+                    Console.WriteLine("VERDADEIRO");
+                }
+                else
+                {
+                    Console.WriteLine("FALSO");
+                }
+                        
 
-
+                Console.WriteLine("'Pseudocódigo' < 'turbo'");
+                Console.WriteLine("3 + 5 <= 2 * 4");
             }
 
             void menu()
@@ -495,6 +547,8 @@ namespace EXERCICIO
                     Console.WriteLine("19-exercicio strings 3\n");
                     Console.WriteLine("20-exercicio strings 4\n");
                     Console.WriteLine("21-exercicio strings 5\n");
+                    Console.WriteLine("22-exercicio strings 6\n");
+                    Console.WriteLine("23-exercicio strings 7\n");
                     Console.WriteLine("digite o numero do exercicio:\n ");
 
                     var opcao = Convert.ToInt32(Console.ReadLine());
@@ -623,6 +677,18 @@ namespace EXERCICIO
                             break;
                         case 21:
                             ExercicioString5();
+                            Console.ReadLine();
+                            Console.Clear();
+                            menu();
+                            break;
+                        case 22:
+                            ExercicioString6();
+                            Console.ReadLine();
+                            Console.Clear();
+                            menu();
+                            break;
+                        case 23:
+                            ExercicioString7();
                             Console.ReadLine();
                             Console.Clear();
                             menu();
