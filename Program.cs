@@ -756,6 +756,7 @@ namespace EXERCICIO
                         Console.WriteLine($"O total da sua conta será igual a R${total}");
                     }
                 }
+            }
 
             void menu()
             {
