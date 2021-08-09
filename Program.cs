@@ -658,6 +658,105 @@ namespace EXERCICIO
                 escolha();
             }
 
+            void ExercicioString11()
+            {
+                Console.Write("Em que Mês você nasceu?escreva a primeira letra maiúscula: ");
+                string nome_mes = Console.ReadLine();
+                Console.Write("Qual o numero correspondente a esse Mês: ");
+
+                int numero_mes = int.Parse(Console.ReadLine());
+
+                if (nome_mes == "Janeiro" & numero_mes == 1)
+                {
+                    Console.WriteLine("Você nasceu no verão");
+                }
+                if (nome_mes == "Fevereiro" & numero_mes == 2)
+                {
+                    Console.WriteLine("Você nasceu no verão");
+                }
+                if (nome_mes == "Março" & numero_mes == 3)
+                {
+                    Console.WriteLine("Você nasceu no verão");
+                }
+                if (nome_mes == "Abril" & numero_mes == 4)
+                {
+                    Console.WriteLine("Você nasceu no outono");
+                }
+                if (nome_mes == "Maio" & numero_mes == 5)
+                {
+                    Console.WriteLine("Você nasceu no outono");
+                }
+                if (nome_mes == "Junho" & numero_mes == 6)
+                {
+                    Console.WriteLine("Você nasceu no outono");
+                }
+                if (nome_mes == "Julho" & numero_mes == 7)
+                {
+                    Console.WriteLine("Você nasceu no inverno");
+                }
+                if (nome_mes == "Agosto" & numero_mes == 8)
+                {
+                    Console.WriteLine("Você nasceu no inverno");
+                }
+                if (nome_mes == "Setembro" & numero_mes == 9)
+                {
+                    Console.WriteLine("Você nasceu no inverno");
+                }
+                if (nome_mes == "Outubro" & numero_mes == 10)
+                {
+                    Console.WriteLine("Você nasceu no primaveira");
+                }
+                if (nome_mes == "Novembro" & numero_mes == 11)
+                {
+                    Console.WriteLine("Você nasceu no primaveira");
+                }
+                if (nome_mes == "Dezembro" & numero_mes == 12)
+                {
+                    Console.WriteLine("Você nasceu no primaveira");
+                }
+                escolha();
+            }
+
+            void ExercicioString12()
+            {
+                Console.Write("Número\t\t" + "Quadrado\t" + "Cubo\n");
+                for (int i = 0; i <= 10; i++)
+                {
+                    Console.Write( i + "\t\t");
+                    Console.Write( Math.Pow(i, 2) + "\t\t");
+                    Console.Write( Math.Pow(i, 3) + "\n");
+                }
+            }
+
+            void ExercicioString13()
+            {
+                Console.WriteLine("Valor da diária R$50,00");
+                Console.WriteLine("Valor da taxa de serviço acima de 15 diárias R$3,00");
+                Console.WriteLine("Valor da taxa de serviço igual a 15 diárias R$3,60");
+                Console.WriteLine("Valor da taxa de serviço abaixo de 15 diárias R$4,00\n");
+                Console.WriteLine("Digite quantos dias você deseja ficar hospedado no hotel: ");
+                int dias = int.Parse(Console.ReadLine());
+
+                // calculo para saber quanto o cliente irá
+                if (dias > 15)
+                {
+                    double total = (dias * 3) + (dias * 50);
+                    Console.WriteLine($"O total da sua conta será igual a R${total}");
+                }
+                else
+                {
+                    if (dias == 15)
+                    {
+                        double total = (dias * 3.60) + (dias * 50);
+                        Console.WriteLine($"O total da sua conta será igual a R${total}");
+                    }
+                    else
+                    {
+                        double total = (dias * 4) + (dias * 50);
+                        Console.WriteLine($"O total da sua conta será igual a R${total}");
+                    }
+                }
+
             void menu()
             {
                 Console.Clear();
@@ -688,6 +787,8 @@ namespace EXERCICIO
                 Console.WriteLine("24-exercicio strings 8\n");
                 Console.WriteLine("25-exercicio strings 9\n");
                 Console.WriteLine("26-exercicio strings 10\n");
+                Console.WriteLine("27-exercicio strings 11\n");
+                Console.WriteLine("28-exercicio strings 12\n");
                 Console.WriteLine("digite o numero do exercicio:\n ");
 
                 var opcao = Convert.ToInt32(Console.ReadLine());
@@ -847,6 +948,18 @@ namespace EXERCICIO
                         break;
                     case 26:
                         ExercicioString10();
+                        Console.ReadLine();
+                        Console.Clear();
+                        menu();
+                        break;
+                    case 27:
+                        ExercicioString11();
+                        Console.ReadLine();
+                        Console.Clear();
+                        menu();
+                        break;
+                    case 28:
+                        ExercicioString12();
                         Console.ReadLine();
                         Console.Clear();
                         menu();
